@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHRONOS X</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="main-container">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar">
+
+        <h2>CHRONOS X</h2>
+
+        <div class="stat-card">
+            <h3>Productivity</h3>
+            <p id="productivity-score">87%</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Tasks</h3>
+            <p id="task-count">12</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Risk Alerts</h3>
+            <p id="risk-count">2</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Automations</h3>
+            <p id="automation-count">5</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Mission Status</h3>
+            <p id="mission-status">ACTIVE</p>
+        </div>
+
+    </div>
+
+    <!-- MAIN SECTION -->
+    <div class="chat-section">
+
+        <h1>MISSION CONTROL</h1>
+
+        <!-- AGENT STATUS PANEL -->
+        <div class="agent-panel">
+
+            <div class="agent-card">
+                    Planner Agent
+                <span class="agent-status active">ONLINE</span>
+            </div>
+
+            <div class="agent-card">
+                    Risk Agent
+                <span class="agent-status active">ONLINE</span>
+            </div>
+
+            <div class="agent-card">
+                    Task Agent
+                <span class="agent-status active">ONLINE</span>
+            </div>
+
+            <div class="agent-card">
+                    Automation Agent
+                <span class="agent-status active">ONLINE</span>
+            </div>
+
+        </div>
+
+        <!-- MISSION TIMELINE -->
+        <div class="timeline-panel">
+
+            <h3>MISSION EXECUTION</h3>
+
+            <div class="timeline-step">✓ Analysis</div>
+            <div class="timeline-step">✓ Planning</div>
+            <div class="timeline-step">✓ Risk Assessment</div>
+            <div class="timeline-step">◉ Scheduling</div>
+            <div class="timeline-step">○ Execution</div>
+
+        </div>
+
+        <!-- LIVE AGENT LOG -->
+        <div class="agent-feed">
+
+            <h3>LIVE AGENT FEED</h3>
+
+            <div id="agent-feed-content">
+                <div>[SYSTEM] CHRONOS X Initialized</div>
+            </div>
+
+        </div>
+
+        <!-- GENERATED MISSION CARD -->
+        <div class="mission-panel">
+
+            <h3>MISSION SUMMARY</h3>
+
+            <div id="mission-card">
+
+                <div class="mission-item">
+                    Objective: Awaiting Input...
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CHAT OUTPUT -->
+        <div id="chat-box"></div>
+
+        <!-- CONTROLS -->
+        <div class="controls">
+
+            <label for="pdfFile" class="upload-btn">
+                Upload Mission Brief
+            </label>
+
+            <input type="file"
+                   id="pdfFile"
+                   hidden>
+
+            <button class="analyze-btn"
+                    onclick="uploadPDF()">
+                Analyze
+            </button>
+
+            <button onclick="startVoice()">
+                    Voice
+            </button>
+
+            <button onclick="demoMode()">
+                    Demo
+            </button>
+            <button onclick="activateAuto()">
+                    Auto Mode
+            </button>
+
+            <button onclick="scheduleMission()">
+                    Schedule
+            </button>
+
+        </div>
+
+        <!-- INPUT -->
+        <div class="input-container">
+
+            <input
+                type="text"
+                id="user-input"
+                placeholder="Describe your mission..."
+            >
+
+            <button onclick="sendMessage()">
+                SEND
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
+</body>
+</html>
